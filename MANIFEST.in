@@ -17,3 +17,31 @@ include django_basic_crud_generator/templates/tests/create.tmpl
 include django_basic_crud_generator/templates/tests/detail.tmpl
 include django_basic_crud_generator/templates/tests/update.tmpl
 include django_basic_crud_generator/templates/tests/delete.tmpl
+
+include django_basic_crud_generator/templates/layout/base.tmpl
+
+
+include ExampleApp/views/__init__.py
+include ExampleApp/views/example_model/__init__.py
+include ExampleApp/views/example_model/example_model_list.py
+include ExampleApp/views/example_model/example_model_create.py
+include ExampleApp/views/example_model/example_model_detail.py
+include ExampleApp/views/example_model/example_model_update.py
+include ExampleApp/views/example_model/example_model_delete.py
+
+include ExampleApp/templates/example_model/example_model_list.html
+include ExampleApp/templates/example_model/example_model_create.html
+include ExampleApp/templates/example_model/example_model_detail.html
+include ExampleApp/templates/example_model/example_model_update.html
+include ExampleApp/templates/example_model/example_model_delete.html
+
+include ExampleApp/tests/__init__.py
+include ExampleApp/tests/example_model/__init__.py
+include ExampleApp/tests/example_model/example_model_list_test.py
+include ExampleApp/tests/example_model/example_model_create_test.py
+include ExampleApp/tests/example_model/example_model_detail_test.py
+include ExampleApp/tests/example_model/example_model_update_test.py
+include ExampleApp/tests/example_model/example_model_delete_test.py
+
+include ExampleApp/urls.py
+

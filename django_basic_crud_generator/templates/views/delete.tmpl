@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 
 from ${app_name}.models import ${model_name}
 
-class ${model_name}DeleteView(DeleteView):
+class ${model_name}${crud_item_capitalize}View(DeleteView):
     model = ${model_name}
-    template_name = "${model_name_u_lower}/${model_name_u_lower}_delete.html"
+    template_name = "${model_name_u_lower}/${model_name_u_lower}_${crud_item}.html"
     success_url = reverse_lazy('${model_name_u_lower}_list')

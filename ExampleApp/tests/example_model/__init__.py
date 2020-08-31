@@ -1,0 +1,5 @@
+from .example_model_delete_test import ExampleModelDeleteTestCase
+from .example_model_update_test import ExampleModelUpdateTestCase
+from .example_model_detail_test import ExampleModelDetailTestCase
+from .example_model_create_test import ExampleModelCreateTestCase
+from .example_model_list_test import ExampleModelListTestCase
