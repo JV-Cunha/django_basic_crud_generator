@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/Django-Basic-CRUD-Generator.svg)](https://pypi.org/project/Django-Basic-CRUD-Generator/)
 
 * Django Basic CRUD Generator is a simple python script to generate views, templates and tests files for a given Django Model.
-* The Script will generate the following files, using as base the templates inside django_basic_crud_generator/templates
+* The Script will generate the following files, using as base these [templates files](https://github.com/J-hanks/django_basic_crud_generator/tree/master/django_basic_crud_generator/templates)
 
 ```bash
 ├── APP_NAME
