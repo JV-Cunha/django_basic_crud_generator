@@ -1,0 +1,1 @@
+from .django_basic_crud_generator import generate_files

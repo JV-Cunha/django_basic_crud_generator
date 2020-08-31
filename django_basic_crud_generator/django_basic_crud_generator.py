@@ -77,9 +77,10 @@ def open_or_create_file(file):
 
 
 
-def execute_from_command_line():
+def execute_from_command_line(args=None):
 
-    args = argument_parser()
+    if (args == None):
+        args = argument_parser()
 
     app_name = args['app_name']
     model_name = args['model_name']
@@ -229,3 +230,11 @@ def execute_from_command_line():
 
 def __main__():
     execute_from_command_line()
+
+def generate_files(app_name,model_name,use_template_layout=False,override_templates=None):
+    args = {}
+    args['app_name']=app_name
+    args['model_name']=model_name
+    args['use_template_layout']=use_template_layout
+    args['override_templates']=override_templates
+    execute_from_command_line(args)
