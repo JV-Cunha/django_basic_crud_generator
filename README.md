@@ -44,8 +44,7 @@ You must set app_name and model_name options
 ```bash
 python -m django_basic_crud_generator --app_name YOUR_APP --model_name YOUR_MODEL
 ```
-
-## Options:
+Options:
 - `--app_name`: Your Django application name
 - `--model_name`: Your Django model name you want crud generated
 
