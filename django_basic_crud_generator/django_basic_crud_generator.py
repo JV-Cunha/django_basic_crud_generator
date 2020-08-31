@@ -219,10 +219,11 @@ def execute_from_command_line():
                 prepend_to_file(urls_file_path, prepend_view_import_content)
 
                 # Append path statement to urls.py file
-                append_view_path_content = ("path('" + model_name_underscore + "/" + crud_item + "', " +
+                append_view_path_content = ("path('" + model_name_underscore + "/" + crud_item + ("/<int:pk>" if (crud_item == "detail" or crud_item == "update" or crud_item == "delete")  else "") +"/', " +
                                             model_name + crud_item.capitalize() + "View.as_view(), name='" +
                                             model_name_underscore + "_" + crud_item + "')\n"
                                             )
+                
                 append_to_file(urls_file_path, append_view_path_content)
 
 
