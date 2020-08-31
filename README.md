@@ -43,9 +43,19 @@ Install using pip
 pip install django_basic_crud_generator
 ```
 ## Usage:
-You must set app_name and model_name options
+You can call the script anywhere set app_name and model_name options are Required
 ```bash
 python -m django_basic_crud_generator --app_name MY_APP --model_name MY_MODEL
+```
+You can also import in your python scripts to generate files programatically.
+```python
+import django_basic_crud_generator
+django_basic_crud_generator.generate_files(
+    app_name="MyApp",
+    model_name="MyModel",
+    use_template_layout=True,
+    override_templates="MyTemplatesFolder/"
+)
 ```
 Options:
 - `--app_name`: Your Django application name
