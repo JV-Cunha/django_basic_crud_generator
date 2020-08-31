@@ -4,7 +4,7 @@ long_description =  open("README.md", "r").read()
 
 setuptools.setup(
     name='Django Basic CRUD Generator',
-    version='0.1',
+    version='0.2',
     description='Script to generate views, templates and tests files for a given Django Model',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -20,5 +20,5 @@ setuptools.setup(
         'Development Status :: 3 - Alpha',
         "Operating System :: OS Independent",
     ],
-    keywords='Django CRUD scaffolding scaffold',
+    keywords='django crud generator scaffolding scaffold',
 )
