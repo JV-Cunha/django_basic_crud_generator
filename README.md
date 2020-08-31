@@ -50,6 +50,7 @@ python -m django_basic_crud_generator --app_name YOUR_APP --model_name YOUR_MODE
 Options:
 - `--app_name`: Your Django application name
 - `--model_name`: Your Django model name you want crud generated
+- `--use_template_layout`: Set this flag to system render templates files using this [layout file](https://github.com/J-hanks/django_basic_crud_generator/tree/master/django_basic_crud_generator/templates/layout/base.tmpl)
 
 ## Manually fix urls file:
 - The urls.py file will need mannualy inspection

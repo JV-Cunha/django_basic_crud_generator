@@ -17,3 +17,5 @@ include django_basic_crud_generator/templates/tests/create.tmpl
 include django_basic_crud_generator/templates/tests/detail.tmpl
 include django_basic_crud_generator/templates/tests/update.tmpl
 include django_basic_crud_generator/templates/tests/delete.tmpl
+
+include django_basic_crud_generator/templates/layout/base.tmpl

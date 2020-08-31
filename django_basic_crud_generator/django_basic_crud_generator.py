@@ -82,6 +82,8 @@ def execute_from_command_line():
     app_name = args['app_name']
     model_name = args['model_name']
     model_name_underscore = camel_case_to_underscore(model_name)
+    use_template_layout = args['use_template_layout']
+    print("\n"+str(use_template_layout)+"\n")
 
 
     components = [
@@ -117,7 +119,9 @@ def execute_from_command_line():
             open_or_create_file(os.path.join(
                 app_name, component, model_name_underscore, "__init__.py"))
 
+        # Iterate through the crud items array
         for crud_item in crud_items:
+            # Get the installation path
             real_path = pathlib.Path(__file__).parent.absolute()
             template_file_path = os.path.join(real_path,"templates",component,(crud_item+".tmpl"))
             template_file_content = read_file(template_file_path)
@@ -129,11 +133,20 @@ def execute_from_command_line():
                 crud_item = crud_item,
                 crud_item_capitalize = crud_item.capitalize()
             )
-            # Views and Tests files have py suffix
+            
+            # Views files have py suffix
             crud_item_file_name = ("{}_{}.py".format(
                 model_name_underscore, crud_item))
-            # If component is template files must end with html suffix
             if component == "templates":
+                # If use template layout flag 
+                if use_template_layout:
+                    # Render the rendered template in layout
+                    template_base_layout_file_path = os.path.join(real_path,"templates","layout","base.tmpl")
+                    template_base_layout_file_content = read_file(template_base_layout_file_path)
+                    template_rendered = string.Template(template_base_layout_file_content).safe_substitute(
+                        base_content=template_rendered,
+                    )
+                # If component is template files must end with html suffix
                 crud_item_file_name = ("{}_{}.html".format(
                     model_name_underscore, crud_item))
             if component == "tests":
@@ -147,6 +160,7 @@ def execute_from_command_line():
 
             # Import Created classes to init.py files
             if component != "templates":
+                # Create import statement in model init file 
                 model_init_file_path = os.path.join(
                     app_name, component, model_name_underscore, "__init__.py")
                 prepend_content = ("from ." +
@@ -154,7 +168,8 @@ def execute_from_command_line():
                                    " import " +
                                    model_name+crud_item.capitalize()+component[:-1].capitalize()+("Case" if component == 'tests' else "")+"\n")
                 prepend_to_file(model_init_file_path, prepend_content)
-
+                
+                # Create import statement in general component init file 
                 component_init_file_path = os.path.join(
                     app_name, component, "__init__.py")
                 prepend_content = ("from ." +
@@ -163,21 +178,22 @@ def execute_from_command_line():
                                    model_name+crud_item.capitalize()+component[:-1].capitalize()+("Case" if component == 'tests' else "")+"\n")
                 prepend_to_file(component_init_file_path, prepend_content)
 
-            # Generate urls.py content
+            # Generate urls.py content 
             if component == "views":
                 urls_file_path = os.path.join(app_name, "urls.py")
                 open_or_create_file(urls_file_path)
+                # Prepend import statement to urls.py file
                 prepend_view_import_content = (
                     "from " + app_name + "." + component +
                     " import " + model_name + crud_item.capitalize() + "View\n"
                 )
+                prepend_to_file(urls_file_path, prepend_view_import_content)
+
+                # Append path statement to urls.py file
                 append_view_path_content = ("path('" + model_name_underscore + "/" + crud_item + "', " +
                                             model_name + crud_item.capitalize() + "View.as_view(), name='" +
                                             model_name_underscore + "_" + crud_item + "')\n"
                                             )
-                print(prepend_view_import_content + " ADD TO "+urls_file_path)
-                prepend_to_file(urls_file_path, prepend_view_import_content)
-                print(append_view_path_content + " ADD TO "+urls_file_path)
                 append_to_file(urls_file_path, append_view_path_content)
 
 def __main__():
