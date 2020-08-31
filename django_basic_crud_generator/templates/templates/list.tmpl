@@ -1,0 +1,40 @@
+{% extends "layout/_content.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+{% trans "List ${model_name}" %}
+{% endblock page_title %}
+
+{% block container_class %}login-bg{% endblock container_class%}
+{% block content %}
+<div class=" form-container">
+
+    <h2 class="form-title">${model_name}</h2>
+
+    <table class="table table-fluid">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ${model_name} in object_list %}
+            <tr>
+                <td>{{ ${model_name} }}</td>
+                <td><a href="{% url "${model_name}_detail" ${model_name}.id %}">view</a></td>
+                <td><a href="{% url "${model_name}_update" ${model_name}.id %}">edit</a></td>
+                <td><a href="{% url "${model_name}_delete" ${model_name}.id %}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url "${model_name_u_lower}_create" %}">New</a>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "layout/_content.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+{% trans "Update ${model_name}" %}
+{% endblock page_title %}
+
+{% block container_class %}login-bg{% endblock container_class%}
+{% block content %}
+<div class=" form-container">
+<h2 class="form-title">Update ${model_name}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+</div>
+{% endblock content %}

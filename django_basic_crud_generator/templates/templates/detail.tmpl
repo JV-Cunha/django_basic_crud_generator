@@ -1,0 +1,18 @@
+{% extends "layout/_content.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+{% trans "${model_name} Details" %}
+{% endblock page_title %}
+
+{% block container_class %}login-bg{% endblock container_class%}
+
+{% block content %}
+<div class=" form-container">
+    <h2 class="form-title">{% trans "${model_name} Details" %} </h2>
+    <h1>${model_name} Details</h1>
+    <h2>{{object}}</h2>
+</div>
+{% endblock content %}

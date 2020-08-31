@@ -1,0 +1,9 @@
+from django.views.generic import DetailView
+from django.urls import reverse_lazy
+
+from ${app_name}.models import ${model_name}
+
+
+class ${model_name}DetailView(DetailView):
+    model = ${model_name}
+    template_name = "${model_name_u_lower}/${model_name_u_lower}_detail.html"

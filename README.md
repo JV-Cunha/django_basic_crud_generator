@@ -7,5 +7,5 @@ Django Basic CRUD Generator is a simple python script to generate views, templat
 You must set app_name and model_name
 
 ```bash
-django-basic-crud-generator --app_name YOUR_APP --model_name YOUR_MODEL
+python -m django_basic_crud_generator --app_name YOUR_APP --model_name YOUR_MODEL
 ```

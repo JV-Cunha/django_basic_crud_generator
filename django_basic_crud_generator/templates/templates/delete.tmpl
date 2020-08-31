@@ -1,0 +1,20 @@
+{% extends "layout/_content.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+{% trans "Delete ${model_name}" %}
+{% endblock page_title %}
+
+{% block container_class %}login-bg{% endblock container_class%}
+
+{% block content %}
+<div class=" form-container">
+<h2 class="form-title">{% trans "Delete ${model_name}" %} </h2>
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock content %}
