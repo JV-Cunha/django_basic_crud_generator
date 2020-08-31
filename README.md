@@ -1,6 +1,6 @@
 # Django Basic Crud Generator
-Django Basic CRUD Generator is a simple python script to generate views, templates and tests files for a given Django Model
-The Script will generate the following files, using as base the templates inside django_basic_crud_generator/templates
+* Django Basic CRUD Generator is a simple python script to generate views, templates and tests files for a given Django Model.
+* The Script will generate the following files, using as base the templates inside django_basic_crud_generator/templates
 
 ```bash
 ├── APP_NAME
