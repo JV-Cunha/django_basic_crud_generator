@@ -1,6 +1,11 @@
-from django.views.generic import ListView
+from django.test import TestCase
+from django.urls import reverse
 
-from ${app_name}.models import ${model_name}
+class ${model_name}${crud_item_capitalize}TestCase(TestCase):
+    def setUp(self):
+        pass
 
-class ${model_name}ListView(ListView):
-    model = ${model_name}
+    def test_${model_name_u_lower}_${crud_item}_page(self):
+        response = self.client.get(reverse('${model_name_u_lower}_${crud_item}'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, '${model_name_u_lower}/${model_name_u_lower}_${crud_item}.html')

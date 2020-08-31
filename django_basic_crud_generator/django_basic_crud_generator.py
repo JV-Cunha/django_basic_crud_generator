@@ -125,7 +125,9 @@ def execute_from_command_line():
                 app_name=app_name,
                 model_name=model_name,
                 model_name_u_lower=model_name_underscore,
-                model_name_lower=model_name.lower()
+                model_name_lower=model_name.lower(),
+                crud_item = crud_item,
+                crud_item_capitalize = crud_item.capitalize()
             )
             # Views and Tests files have py suffix
             crud_item_file_name = ("{}_{}.py".format(
@@ -148,9 +150,9 @@ def execute_from_command_line():
                 model_init_file_path = os.path.join(
                     app_name, component, model_name_underscore, "__init__.py")
                 prepend_content = ("from ." +
-                                   model_name_underscore + "_"+crud_item +
+                                   model_name_underscore + "_"+crud_item + ("_test" if component == 'tests' else "") +
                                    " import " +
-                                   model_name+crud_item.capitalize()+component[:-1].capitalize()+"\n")
+                                   model_name+crud_item.capitalize()+component[:-1].capitalize()+("Case" if component == 'tests' else "")+"\n")
                 prepend_to_file(model_init_file_path, prepend_content)
 
                 component_init_file_path = os.path.join(
@@ -158,7 +160,7 @@ def execute_from_command_line():
                 prepend_content = ("from ." +
                                    model_name_underscore +
                                    " import " +
-                                   model_name+crud_item.capitalize()+component[:-1].capitalize()+"\n")
+                                   model_name+crud_item.capitalize()+component[:-1].capitalize()+("Case" if component == 'tests' else "")+"\n")
                 prepend_to_file(component_init_file_path, prepend_content)
 
             # Generate urls.py content

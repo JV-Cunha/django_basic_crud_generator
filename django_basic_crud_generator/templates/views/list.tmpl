@@ -2,6 +2,6 @@ from django.views.generic import ListView
 
 from ${app_name}.models import ${model_name}
 
-class ${model_name}ListView(ListView):
+class ${model_name}${crud_item_capitalize}View(ListView):
     model = ${model_name}
-    template_name = "${model_name_u_lower}/${model_name_u_lower}_list.html"
+    template_name = "${model_name_u_lower}/${model_name_u_lower}_${crud_item}.html"
