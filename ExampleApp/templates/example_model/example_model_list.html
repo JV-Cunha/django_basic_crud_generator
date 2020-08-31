@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2 class="form-title">ExampleModel</h2>
+
+<table class="table table-fluid">
+    <thead>
+        <tr>
+            <th>ExampleModel</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ExampleModel in object_list %}
+        <tr>
+            <td>{{ ExampleModel }}</td>
+            <td><a href="{% url "ExampleModel_detail" ExampleModel.id %}">view</a></td>
+            <td><a href="{% url "ExampleModel_update" ExampleModel.id %}">edit</a></td>
+            <td><a href="{% url "ExampleModel_delete" ExampleModel.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url "example_model_create" %}">New</a>
+</div>
+
+
+{% end block content %}
