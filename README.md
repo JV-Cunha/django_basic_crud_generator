@@ -27,7 +27,7 @@
 │   │   │   ├── MODEL_NAME_detail.py
 │   │   │   ├── MODEL_NAME_update.py
 │   │   │   ├── MODEL_NAME_delete.py
-└── urls.py
+│   │── urls.py
 ```
 
 ## Installation:
