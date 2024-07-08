@@ -5,6 +5,9 @@ from ExampleApp.models import ExampleModel
 
 class ExampleModelCreateView(CreateView):
     model = ExampleModel
-    fields = '__all__'
     template_name = "example_model/example_model_create.html"
-    success_url = reverse_lazy('example_model_list')
+    
+     fields = '__all__'
+    
+     success_url = reverse_lazy('example_model_list')
+    

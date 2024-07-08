@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2 class="form-title"> [[[zg-entity...zg-name]]] ExampleModel</h2>
+  zg-for(((zg-item:::[[[zg-entity...zg-fields]]]))){{{
+   [[[zg-item...zg-name]]]
+  }}}
+
+{% end block content %}

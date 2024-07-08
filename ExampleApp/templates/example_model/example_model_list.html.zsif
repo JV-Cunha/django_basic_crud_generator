@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2 class="form-title">ExampleModel</h2>
+
+<table class="table table-fluid">
+    <thead>
+        <tr>
+            <th>ExampleModel</th>
+            zg-for(((zg-item:::[[[zg-entities]]]))){{{
+            <th>[[[zg-item...zg-name]]]</th>
+            }}}
+        </tr>
+    </thead>
+    <tbody>
+        {% for ExampleModel in object_list %}
+        <tr>
+            <td>{{ ExampleModel }}</td>
+            zg-for(((zg-item:::[[[zg-entities]]]))){{{
+            zg-for(((zg-item2:::[[[zg-item...zg-fields]]]))){{{
+            <td><a href="{% url "ExampleModel_[[[zg-item2...zg-name]]]" ExampleModel.id %}">zg-lower(((zg-item...zg-name)))</a></td>
+            }}}
+            }}}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url "example_model_create" %}">New</a>
+</div>
+
+
+{% end block content %}

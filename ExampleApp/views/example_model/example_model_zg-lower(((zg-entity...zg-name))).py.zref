@@ -1,0 +1,11 @@
+from django.views.generic.edit import [[[zg-entity...zg-name]]]View
+from django.urls import reverse_lazy
+
+from ExampleApp.models import ExampleModel
+
+class ExampleModel[[[zg-entity...zg-name]]]View([[[zg-entity...zg-name]]]View):
+    model = ExampleModel
+    template_name = "example_model/example_model_zg-lower(((zg-entity...zg-name))).html"
+    zg-for(((zg-item:::[[[zg-entity...zg-fields]]]))){{{
+     [[[zg-item...zg-name]]]
+    }}}

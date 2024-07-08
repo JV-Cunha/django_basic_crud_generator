@@ -3,12 +3,17 @@
 
 {% block content %}
 
-<h2 class="form-title">Add ExampleModel</h2>
-    <form class="" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit" />
-    </form>
-</div>
+<h2 class="form-title"> Create ExampleModel</h2>
+  
+   <form class="" method="post">
+  
+   {% csrf_token %}
+  
+   {{ form }}
+  
+   <input type="submit" value="Submit" />
+  
+   </form>
+  
 
 {% end block content %}

@@ -1,0 +1,9 @@
+zg-for(((zg-item:::[[[zg-entities]]]))){{{
+from ExampleApp.views import ExampleModel[[[zg-item...zg-name]]]View
+}}}
+
+zg-for(((zg-item:::[[[zg-entities]]]))){{{
+zg-for(((zg-item2:::[[[zg-item...zg-fields]]]))){{{
+path('example_model/[[[zg-item...zg-name]]][[[zg-item2...zg-name]]]', ExampleModel[[[zg-item...zg-name]]]View.as_view(), name='example_model_zg-lower(((zg-item...zg-name)))')
+}}}
+}}}

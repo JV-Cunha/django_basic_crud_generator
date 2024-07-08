@@ -1,0 +1,11 @@
+from django.test import TestCase
+from django.urls import reverse
+
+class ExampleModel[[[zg-entity...zg-name]]]TestCase(TestCase):
+    def setUp(self):
+        pass
+
+    def test_example_model_zg-lower(((zg-entity...zg-name)))_page(self):
+        response = self.client.get(reverse('example_model_zg-lower(((zg-entity...zg-name)))'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'example_model/example_model_zg-lower(((zg-entity...zg-name))).html')
